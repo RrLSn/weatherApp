@@ -2,11 +2,12 @@
     @apply m-0 p-0 box-border
 }
 .app{
-    @apply w-screen h-screen text-emerald-300 text-2xl font-[500]
+    @apply w-screen h-screen text-emerald-300 
+    /* text-2xl font-[500] */
 }
 
 .container{
-    @apply p-[1rem] w-[100%] bg-red-700  flex flex-col justify-between
+    @apply p-[1rem] flex flex-col justify-between
 }
 
 .app .desc {
@@ -14,5 +15,6 @@
 }
 
 .app .bottom{
-    @apply p-[2rem] content-end flex justify-between w-[30rem] m-auto
+    background-color: rgba(255,255,255,0.5);
+    @apply p-[2rem] content-end flex justify-between w-[30rem] m-auto rounded-lg text-emerald-900 text-center
 }
