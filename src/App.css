@@ -1,0 +1,18 @@
+*{
+    @apply m-0 p-0 box-border
+}
+.app{
+    @apply w-screen h-screen text-emerald-300 text-2xl font-[500]
+}
+
+.container{
+    @apply p-[1rem] w-[100%] bg-red-700  flex flex-col justify-between
+}
+
+.app .desc {
+    @apply relative right-[-95%] w-[max-content] origin-center -rotate-90 text-3xl
+}
+
+.app .bottom{
+    @apply p-[2rem] content-end flex justify-between w-[30rem] m-auto
+}
