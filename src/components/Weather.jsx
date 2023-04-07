@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import BackgroundSlider from './BackgroundSlider'
 import axios from 'axios'
 
 const Weather = () => {
-    const [currentImg,setCurrentImg] = useState(5)
+    const [currentImg,setCurrentImg] = useState(0)
     const [data, setData] = useState({})
     // const [input, setInput] = useState('')
     const [location, setLocation] = useState('')
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=8d65d181d0b30bf53beed92b8ebdad60`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
 
-    const searchLocation = (e) => {
-        // e.preventDefault()
-        if(e.key === 'Enter'){
-            axios.get(url)
-            .then((res) => setData(res.data))
-            console.log(res.data)
-        }
+    const searchLocation = () => {
+        axios.get(url)
+        .then((res) => {setData(res.results)})
+        console.log(data)
+        // .catch((err) => alert(err))
     }
 
-    console.log(location)
+    setTimeout(() => {
+        setCurrentImg(Math.floor(Math.random() * 6))
+    },100000)
 
-    // const handleClick = (e) => {
-    //     e.preventDefault()
-    //     searchLocation()
-    //     console.log(input)
-    //     setInput('')
-    // }
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        searchLocation()
+        setLocation('')
+        setData({})
+    }
 
     const bgImgStyle = {
         backgroundImage: `url(${BackgroundSlider[currentImg].url})`,
@@ -39,15 +40,18 @@ const Weather = () => {
         zIndex: "-1" 
     }  
   return (
-    // <div className='w-sreen h-screen bg-black'>
-        <form style={bgImgStyle} className='container'>
+        <form onSubmit={handleClick} style={bgImgStyle} className='container'>
+            <div className='w-[100%] flex justify-center text-black'>
             <input type="text" 
             value={location} 
             onChange={(e)=> setLocation(e.target.value)} 
-            onKeyPress={searchLocation} placeholder='Enter Location' />
+            placeholder='Enter Location'
+            className='w-[25rem] p-[0.5rem] rounded-full focus:outline-none'
+            />
+            </div>
             <div className="top">
                 <div className="location h-[15rem] flex flex-col justify-between">
-                    <h1 className='text-7xl font-[700]'>Dallas</h1>
+                    <h1 className='text-7xl font-[700]'>Location</h1>
                     <p>Lon:</p>
                     <p>Lat:</p>
                     <div className="temp">
@@ -73,7 +77,6 @@ const Weather = () => {
                 </div>
             </div>
         </form>
-    // </div>
   )
 }
 
