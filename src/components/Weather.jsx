@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import BackgroundSlider from './BackgroundSlider'
 import axios from 'axios'
 
@@ -16,17 +16,20 @@ const Weather = () => {
         // .catch((err) => alert(err))
     }
 
-    setTimeout(() => {
-        setCurrentImg(Math.floor(Math.random() * 6))
-    },100000)
-
+    // useEffect(() => {
+    //     searchLocation()
+    // },[])
 
     const handleClick = (e) => {
         e.preventDefault()
-        searchLocation()
         setLocation('')
-        setData({})
+        searchLocation()
+        
     }
+
+    setTimeout(() => {
+        setCurrentImg(Math.floor(Math.random() * 6))
+    },10000)
 
     const bgImgStyle = {
         backgroundImage: `url(${BackgroundSlider[currentImg].url})`,
