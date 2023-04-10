@@ -4,20 +4,21 @@ import axios from 'axios'
 
 const Weather = () => {
     const [currentImg,setCurrentImg] = useState(0)
-    const [data, setData] = useState({})
-    // const [input, setInput] = useState('')
+    const [data, setData] = useState()
     const [location, setLocation] = useState('')
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=895284fb2d2c50a520ea537456963d9c`
 
     const searchLocation = () => {
         axios.get(url)
         .then((res) => {setData(res.results)})
+        .catch((err)=>{
+            console.log(err+'This is not a valid city')
+        })
         console.log(data)
-        // .catch((err) => alert(err))
     }
 
     // useEffect(() => {
-    //     searchLocation()
+        // searchLocation()
     // },[])
 
     const handleClick = (e) => {
@@ -29,7 +30,7 @@ const Weather = () => {
 
     setTimeout(() => {
         setCurrentImg(Math.floor(Math.random() * 6))
-    },10000)
+    },50000)
 
     const bgImgStyle = {
         backgroundImage: `url(${BackgroundSlider[currentImg].url})`,
