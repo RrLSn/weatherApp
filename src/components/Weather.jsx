@@ -44,19 +44,19 @@ const Weather = () => {
                 value={city}
                 onChange={(e)=> setCity(e.target.value)}
                 placeholder='Input City'
-                className='w-[25rem] p-[0.5rem] rounded-full focus:outline-none'/>
+                className='w-[25rem] p-[0.7rem] rounded-full focus:outline-blue-700 placeholder:p-[0.5rem]'/>
             </form>
             {data.length === 0 ? (
                 ""
             ): (
             <>
                 <div className="top">
-                    <div className="h-[15rem] flex flex-col justify-between">
-                        <h1 className='text-7xl font-[700]'>{data.name},<>{data.sys.country}</></h1>
+                    <div className="lg:h-[15rem] h-[12rem] flex flex-col justify-between">
+                        <h1 className='lg:text-7xl text-3xl font-[700]'>{data.name}, <>{data.sys.country}</></h1>
                         <p>Lon: {data.coord.lon}</p>
                         <p>Lat: {data.coord.lat}</p>
                         <div className="temp">
-                            <h1 className='text-5xl font-[500]'>{data.main.feels_like}°F</h1>
+                            <h1 className='text-5xl font-[500]'>{data.main.temp_max}°</h1>
                         </div>
                     </div>
                     <div className="desc">
@@ -65,7 +65,7 @@ const Weather = () => {
                 </div>
                 <div className="bottom">
                     <div className="feels">
-                        <p>{data.main.feels_like}°F</p>
+                        <p>{data.main.feels_like}°</p>
                         <p>Feels Like</p>
                     </div>
                     <div className="humidity">
