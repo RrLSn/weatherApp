@@ -1,36 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import BackgroundSlider from './BackgroundSlider'
 import axios from 'axios'
 
 const Weather = () => {
     const [currentImg,setCurrentImg] = useState(0)
-    const [data, setData] = useState()
-    const [location, setLocation] = useState('')
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=895284fb2d2c50a520ea537456963d9c`
+    const [data, setData] = useState('')
+    const [city, setCity] = useState('')
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=895284fb2d2c50a520ea537456963d9c`
 
-    const searchLocation = () => {
+    const searchCity = () => {
         axios.get(url)
-        .then((res) => {setData(res.results)})
+        .then((res) => setData(res.data))
         .catch((err)=>{
-            console.log(err+'This is not a valid city')
+            console.log(err)
         })
         console.log(data)
     }
 
-    // useEffect(() => {
-        // searchLocation()
-    // },[])
-
     const handleClick = (e) => {
         e.preventDefault()
-        setLocation('')
-        searchLocation()
-        
+        setCity('')
+        searchCity()
+        setTimeout(() => {
+            setCurrentImg(Math.floor(Math.random() * 6))
+        })
     }
-
-    setTimeout(() => {
-        setCurrentImg(Math.floor(Math.random() * 6))
-    },50000)
 
     const bgImgStyle = {
         backgroundImage: `url(${BackgroundSlider[currentImg].url})`,
@@ -44,43 +38,48 @@ const Weather = () => {
         zIndex: "-1" 
     }  
   return (
-        <form onSubmit={handleClick} style={bgImgStyle} className='container'>
-            <div className='w-[100%] flex justify-center text-black'>
-            <input type="text" 
-            value={location} 
-            onChange={(e)=> setLocation(e.target.value)} 
-            placeholder='Enter Location'
-            className='w-[25rem] p-[0.5rem] rounded-full focus:outline-none'
-            />
-            </div>
-            <div className="top">
-                <div className="location h-[15rem] flex flex-col justify-between">
-                    <h1 className='text-7xl font-[700]'>Location</h1>
-                    <p>Lon:</p>
-                    <p>Lat:</p>
-                    <div className="temp">
-                        <h1 className='text-5xl font-[500]'>65°F</h1>
+        <div style={bgImgStyle} className='container'>
+            <form onSubmit={handleClick} className='w-[100%] flex justify-center text-black mb-[2rem]'>
+                <input type="text"
+                value={city}
+                onChange={(e)=> setCity(e.target.value)}
+                placeholder='Input City'
+                className='w-[25rem] p-[0.5rem] rounded-full focus:outline-none'/>
+            </form>
+            {data.length === 0 ? (
+                ""
+            ): (
+            <>
+                <div className="top">
+                    <div className="h-[15rem] flex flex-col justify-between">
+                        <h1 className='text-7xl font-[700]'>{data.name},<>{data.sys.country}</></h1>
+                        <p>Lon: {data.coord.lon}</p>
+                        <p>Lat: {data.coord.lat}</p>
+                        <div className="temp">
+                            <h1 className='text-5xl font-[500]'>{data.main.feels_like}°F</h1>
+                        </div>
+                    </div>
+                    <div className="desc">
+                        <p>{data.weather[0].main}</p>
                     </div>
                 </div>
-                <div className="desc">
-                    <p>clouds</p>
+                <div className="bottom">
+                    <div className="feels">
+                        <p>{data.main.feels_like}°F</p>
+                        <p>Feels Like</p>
+                    </div>
+                    <div className="humidity">
+                        <p>{data.main.humidity}</p>
+                        <p>Humidity</p>
+                    </div>
+                    <div className="wind">
+                        <p>{data.wind.speed}mpm</p>
+                        <p>Wind Speed</p>
+                    </div>
                 </div>
-            </div>
-            <div className="bottom">
-                <div className="feels">
-                    <p>65°F</p>
-                    <p>Feels Like</p>
-                </div>
-                <div className="humidity">
-                    <p>20</p>
-                    <p>Humidity</p>
-                </div>
-                <div className="wind">
-                    <p>12mpm</p>
-                    <p>Wind Speed</p>
-                </div>
-            </div>
-        </form>
+            </>
+            )}
+        </div>
   )
 }
 

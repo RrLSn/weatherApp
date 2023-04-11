@@ -11,7 +11,7 @@
 }
 
 .app .desc {
-    @apply relative right-[-95%] w-[max-content] origin-center -rotate-90 text-3xl
+    @apply relative right-[-92%] w-[max-content] origin-center -rotate-90 text-3xl
 }
 
 .app .bottom{
