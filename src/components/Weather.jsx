@@ -50,14 +50,12 @@ const Weather = () => {
                 ""
             ): (
             <>
-                <div className="top">
+                {/* <div className="top">
                     <div className="lg:h-[15rem] h-[12rem] flex flex-col justify-between">
                         <h1 className='lg:text-7xl text-3xl font-[700]'>{data.name}, <>{data.sys.country}</></h1>
                         <p>Lon: {data.coord.lon}</p>
                         <p>Lat: {data.coord.lat}</p>
-                        <div className="temp">
-                            <h1 className='text-5xl font-[500]'>{data.main.temp_max}°</h1>
-                        </div>
+                        <h1 className='text-5xl font-[500]'>Temp: {data.main.temp_max}°</h1>
                     </div>
                     <div className="desc">
                         <p>{data.weather[0].main}</p>
@@ -76,7 +74,7 @@ const Weather = () => {
                         <p>{data.wind.speed}mpm</p>
                         <p>Wind Speed</p>
                     </div>
-                </div>
+                </div> */}
             </>
             )}
         </div>
