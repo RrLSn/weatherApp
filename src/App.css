@@ -13,7 +13,7 @@
     @apply relative right-[-92%] w-[max-content] origin-center -rotate-90 text-3xl
 }
 
-.app .bottom{
+/* .app .bottom{
     background-color: rgba(255,255,255,0.5);
     @apply lg:p-[2rem] p-[1rem] flex justify-between lg:w-[30rem] w-[20rem] m-auto rounded-lg text-emerald-900 text-center lg:mt-[10rem] mt-[4rem]
-}
+} */
