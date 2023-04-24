@@ -2,18 +2,18 @@
     @apply m-0 p-0 box-border
 }
 .app{
-    @apply w-screen h-screen bg-[url('/Media/Background.jpg')] bg-cover text-center overflow-x-hidden p-[2rem]
+    @apply w-screen h-screen bg-[url('/Media/Background.gif')] bg-cover overflow-x-hidden text-white font-serif
 }
 
-/* .container{
-    @apply w-screen h-screen p-[1rem] flex flex-col justify-between
-} */
-
-.app .desc {
-    @apply relative right-[-92%] w-[max-content] origin-center -rotate-90 text-3xl
+.container{
+    @apply w-[65vw] h-[auto] p-[2rem]
 }
 
-.app .bottom{
-    background-color: rgba(255,255,255,0.5);
-    @apply lg:p-[2rem] p-[1rem] flex justify-between lg:w-[30rem] w-[20rem] m-auto rounded-lg text-emerald-900 text-center lg:mt-[10rem] mt-[4rem]
+.info-box{
+    box-shadow: 0 3px 6px black;
+    @apply flex flex-col w-[30%] h-[80vh] justify-between border border-black rounded-lg  p-[2.5rem] 
+}
+
+.desc{
+    @apply text-center text-3xl
 }
