@@ -2,7 +2,11 @@
     @apply m-0 p-0 box-border
 }
 .app{
-    @apply w-screen h-screen bg-[url('/Media/Background.gif')] bg-cover overflow-x-hidden text-white font-serif
+    @apply w-screen h-screen bg-[url('/Media/Background.gif')] bg-cover overflow-hidden text-white font-serif
+}
+
+.pageInput{
+    @apply w-[25rem] p-[0.7rem] rounded-full focus:outline-none placeholder:p-[0.5rem]
 }
 
 .container{
@@ -11,9 +15,29 @@
 
 .info-box{
     box-shadow: 0 3px 6px black;
-    @apply flex flex-col w-[30%] h-[80vh] justify-between border border-black rounded-lg  p-[2.5rem] 
+    @apply flex flex-col w-[30%] h-[85vh] justify-between border border-black rounded-lg  px-[2.5rem] py-[4.5rem]
 }
 
 .desc{
     @apply text-center text-3xl
+}
+
+.weatherInput{
+    @apply w-[20rem] p-[0.5rem] rounded-full focus:outline-none placeholder:p-[0.3rem]
+}
+
+.weatherInfo{
+    @apply flex flex-wrap text-center px-[2.5rem] justify-between gap-6
+}
+
+.weatherInfo img{
+    @apply w-[2.5rem] m-auto
+}
+
+.weatherInfo div p{
+    @apply text-[1.5rem]
+}
+
+.weatherInfo div p span {
+    @apply text-[1rem]
 }
