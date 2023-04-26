@@ -1,37 +1,38 @@
 import React from 'react'
 
-const WeatherInfo = () => {
+const WeatherInfo = (props) => {
+
   return (
     <div className='info-box'>
         <span>
-            <p className='text-4xl font-[500]'>London,GB</p>
+            <p className='text-4xl font-[500]'>{props.state}, {props.country}</p>
             <img src=""/>
         </span>
-        <p className='desc'>rain</p>
-        <p className='desc'>light rain</p>
-        <p  className='desc text-6xl'>8 C</p>
+        <p className='desc'>{props.desc1}</p>
+        <p className='desc'>{props.desc2}</p>
+        <p  className='desc text-6xl'>{props.temp}°C</p>
 
-        <div className='h-[30vh]'>
+        <div className='h-[auto]'>
             <p className='text-2xl font-[700] my-[1rem]'>Weather Infomation</p>
             <div className='weatherInfo'>
              <div>
                 <img src="/Media/humidity.png" />
-                <p>10</p>
+                <p>{props.humidity}%</p>
                 <h2>Humidity</h2>
              </div>
              <div>
                 <img src="/Media/wind.png" />
-                <p>10 <span>M/s</span></p>
+                <p>{props.wind} <span>M/s</span></p>
                 <h2>Wind</h2>
              </div>
              <div>
                 <img src="/Media/temp.png" />
-                <p>10 <span>°C</span></p>
+                <p>{props.temp}<span>°C</span></p>
                 <h2>Temperature</h2>
              </div>
              <div>
                 <img src="/Media/pressure.png" />
-                <p>10 <span>N/m²</span></p>
+                <p>{props.pressure} <span>N/m²</span></p>
                 <h2>Pressure</h2>
              </div>
             </div>
