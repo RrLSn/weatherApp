@@ -1,3 +1,4 @@
+import Graph from './Graph'
 import Nav from './Nav'
 import WeatherInfo from './WeatherInfo'
 import WeatherStat from './WeatherStat'
@@ -13,7 +14,8 @@ const Weather = (props) => {
         desc2,
         temp,
         humidity,
-        wind,pressure} = props
+        wind,pressure,
+        list} = props
     
   return (
         <div className='container'>
@@ -34,7 +36,10 @@ const Weather = (props) => {
                 pressure={pressure}
                 />
                 <div>
-                    <WeatherStat />
+                    <WeatherStat 
+                    list={list}
+                    />
+                    {/* <Graph /> */}
                 </div>
             </main>
             

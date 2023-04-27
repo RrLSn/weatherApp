@@ -22,7 +22,6 @@ function App() {
       setMain(res.data.list[0].main)
       setWeather(res.data.list[0].weather[0])
       setWind(res.data.list[0].wind)
-      // console.log(list[0].weather[0].main)
       setCity('')
     }
   
@@ -42,6 +41,7 @@ function App() {
       pressure={main.pressure}
       humidity={main.humidity}
       wind={wind.speed}
+      list={list}
       />:
       <Input 
       setCity={setCity}

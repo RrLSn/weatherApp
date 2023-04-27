@@ -29,7 +29,7 @@
 }
 
 .weatherInfo{
-    @apply  w-[25rem] flex flex-wrap text-center px-[4rem] justify-between gap-8
+    @apply  w-[25rem] flex flex-wrap text-center px-[5rem] justify-between gap-8
 }
 
 .weatherInfo img{
@@ -55,4 +55,8 @@ main{
 .statBox{
     box-shadow: 0 3px 6px black;
     @apply w-[11vw] h-[23vh] border border-black rounded-2xl text-center py-[0.3rem]
+}
+
+.statBox h1{
+  @apply text-[1.2rem]
 }

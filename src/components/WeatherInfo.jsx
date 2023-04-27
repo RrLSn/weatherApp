@@ -4,6 +4,7 @@ const WeatherInfo = (props) => {
 
   return (
     <div className='info-box'>
+        Today
         <span>
             <p className='text-4xl font-[500]'>{props.state}, {props.country}</p>
             <img src=""/>
