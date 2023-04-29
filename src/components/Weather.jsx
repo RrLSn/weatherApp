@@ -15,7 +15,7 @@ const Weather = (props) => {
         temp,
         humidity,
         wind,pressure,
-        list} = props
+        list,errMessage} = props
     
   return (
         <div className='container'>
@@ -23,6 +23,7 @@ const Weather = (props) => {
             city={city}
             setCity={setCity}
             fetchData={fetchData}
+            errMessage={errMessage}
             />
             <main>
                 <WeatherInfo 
@@ -35,7 +36,7 @@ const Weather = (props) => {
                 wind={wind}
                 pressure={pressure}
                 />
-                <div>
+                <div className='w-screen h-auto lg:bg-transparent bg-[#6464ab]'>
                     <WeatherStat 
                     list={list}
                     />

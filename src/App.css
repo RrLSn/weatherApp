@@ -4,36 +4,36 @@
 
 .app{
     font-style: open sans;
-    @apply w-screen h-screen bg-[url('/Media/Background.gif')] bg-cover lg:overflow-hidden text-white
+    @apply w-screen lg:h-screen h-[105vh] bg-[url('/Media/Background.gif')] bg-cover lg:overflow-hidden text-white
 }
 
 .pageInput{
-    @apply w-[25rem] p-[0.7rem] rounded-full focus:outline-none placeholder:p-[0.5rem]
+    @apply lg:w-[25rem] lg:p-[0.7rem] lg:px-[] px-[0.5rem] w-[13rem] p-[0.2rem] rounded-full m-auto focus:outline-none placeholder:p-[0.5rem] mb-[0.5rem]
 }
 
 .container{
-    @apply w-[65vw] h-[auto] p-[2rem]
+    @apply w-[65vw] h-[auto] lg:p-[2rem] 
 }
 
 .info-box{
     box-shadow: 0 3px 6px black;
-    @apply flex flex-col w-[27%] h-[85vh] justify-between  rounded-lg  px-[2.5rem] py-[2rem]
+    @apply flex flex-col lg:w-[27%] h-[85vh] justify-between  rounded-lg px-[2.5rem] py-[2rem] lg:mb-[] mb-[1.8rem]
 }
 
 .desc{
-    @apply text-center text-3xl
+    @apply text-center lg:text-3xl text-2xl
 }
 
 .weatherInput{
-    @apply w-[20rem] p-[0.5rem] rounded-full focus:outline-none placeholder:p-[0.3rem]
+    @apply lg:w-[20rem] w-[10rem] lg:p-[0.5rem] lg:px-[] px-[0.5rem] rounded-full focus:outline-none placeholder:p-[0.3rem]
 }
 
 .weatherInfo{
-    @apply  w-[22.5rem] flex flex-wrap text-center px-[3.5rem] justify-between gap-8
+    @apply lg:w-[22.5rem] lg:py-[] py-[0.5rem] flex lg:flex-wrap text-center lg:px-[3.5rem] px-[0.5rem] justify-between lg:gap-8 lg:bg-transparent bg-[#a79c9c86] rounded-lg
 }
 
 .weatherInfo img{
-    @apply w-[2.5rem] m-auto
+    @apply lg:w-[2.5rem] w-[1.5rem] m-auto
 }
 
 .weatherInfo div p{
@@ -45,16 +45,16 @@
 }
 
 main{
-    @apply flex justify-between
+    @apply lg:flex lg:gap-10
 }
 
 .statBoxes{
-    @apply w-[67vw] h-[auto] flex flex-wrap my-[1rem] gap-7 
+    @apply w-[67vw] h-[auto] lg:flex lg:flex-wrap my-[1rem] lg:gap-7 
 }
 
 .statBox{
     box-shadow: 0 3px 6px black;
-    @apply w-[11vw] h-[23vh] border border-black rounded-2xl text-center py-[0.4rem] flex flex-col justify-between
+    @apply lg:w-[11vw] w-[90vw] lg:h-[23vh] border border-black rounded-2xl text-center py-[0.4rem] flex lg:flex-col justify-between lg:mb-[] mb-[0.3rem] lg:px-[] px-[0.5rem]
 }
 
 .statBox h1{

@@ -71,7 +71,7 @@ const WeatherStat = (props) => {
     // const date6 = today
 
   return (
-    <div>
+    <div className='lg:p-[] p-[1rem]'>
         NEXT-6DAYS FORECAST
         <div className='statBoxes'>
             <DayStats 
