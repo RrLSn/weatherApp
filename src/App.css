@@ -17,7 +17,7 @@
 
 .info-box{
     box-shadow: 0 3px 6px black;
-    @apply flex flex-col w-[27%] h-[85vh] justify-between  rounded-lg  px-[2.5rem] py-[4.5rem]
+    @apply flex flex-col w-[27%] h-[85vh] justify-between  rounded-lg  px-[2.5rem] py-[2rem]
 }
 
 .desc{
@@ -29,7 +29,7 @@
 }
 
 .weatherInfo{
-    @apply  w-[25rem] flex flex-wrap text-center px-[5rem] justify-between gap-8
+    @apply  w-[22.5rem] flex flex-wrap text-center px-[3.5rem] justify-between gap-8
 }
 
 .weatherInfo img{
@@ -54,7 +54,7 @@ main{
 
 .statBox{
     box-shadow: 0 3px 6px black;
-    @apply w-[11vw] h-[23vh] border border-black rounded-2xl text-center py-[0.3rem]
+    @apply w-[11vw] h-[23vh] border border-black rounded-2xl text-center py-[0.4rem] flex flex-col justify-between
 }
 
 .statBox h1{

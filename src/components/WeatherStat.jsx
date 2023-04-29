@@ -72,7 +72,7 @@ const WeatherStat = (props) => {
 
   return (
     <div>
-        NEXT-7DAYS FORECAST
+        NEXT-6DAYS FORECAST
         <div className='statBoxes'>
             <DayStats 
             // date={date1}

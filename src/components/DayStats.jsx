@@ -5,7 +5,7 @@ const DayStats = (props) => {
   return (
     <div className='statBox'>
         <p>{day}</p>
-        <img src="" alt="" />
+        <img className='m-auto' src={`/Media/${desc1}.svg`} alt="" />
         <h1>{temp}°C</h1>
         <p>{desc1}</p>
         <p>{desc2}</p>

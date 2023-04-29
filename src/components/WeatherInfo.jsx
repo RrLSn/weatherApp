@@ -1,17 +1,19 @@
 import React from 'react'
 
 const WeatherInfo = (props) => {
+   
 
   return (
     <div className='info-box'>
         Today
-        <span>
-            <p className='text-4xl font-[500]'>{props.state}, {props.country}</p>
-            <img src=""/>
-        </span>
+        
+         <p className='text-4xl font-[500]'>{props.state}, {props.country}</p>
+         <img className='w-[6rem] m-auto' src={`/Media/${props.desc1}.svg`}/>
+        <div className='h-[10.5rem] flex flex-col justify-between'>
         <p className='desc'>{props.desc1}</p>
         <p className='desc'>{props.desc2}</p>
         <p  className='desc text-6xl'>{props.temp}°C</p>
+        </div>
 
         <div className='h-[auto]'>
             <p className='text-2xl font-[700] my-[1rem]'>Weather Infomation</p>

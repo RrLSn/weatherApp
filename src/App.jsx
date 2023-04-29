@@ -11,6 +11,7 @@ function App() {
   const [main, setMain] = useState()
   const [weather, setWeather] = useState()
   const [wind, setWind] = useState()
+  const [errMessage, setErrMessage] = useState()
   const apiKey = '5e6ae37d5af6e2a1fd438457d55671a8'
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
     
