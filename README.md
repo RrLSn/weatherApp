@@ -1,2 +1,2 @@
 # weatherApp
-[Preview](https://splendid-yeot-294d8d.netlify.app)
+[Preview](https://creative-clafoutis-d84b91.netlify.app)
