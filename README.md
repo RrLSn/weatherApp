@@ -14,6 +14,8 @@ COMPONENTS
 
 # Demo
 [Preview](https://creative-clafoutis-d84b91.netlify.app)
+![screenshot]()
+![screenshot]()
 
 # Contact
 If you want to contact me, you can reach me at
