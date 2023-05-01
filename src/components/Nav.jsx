@@ -14,7 +14,7 @@ const Nav = ({city,setCity,fetchData,errMessage}) => {
                 placeholder='Input City'
                 className='weatherInput'
                 />
-                <p className='text-red-500 font-[500]'>{errMessage}</p>
+                <p className='lg:w-[] w-[10rem] text-red-500 font-[500]'>{errMessage.slice(0,7)} {errMessage.slice(22,28)}</p>
         </form>
     </div>
   )

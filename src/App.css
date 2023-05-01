@@ -4,7 +4,7 @@
 
 .app{
     font-style: open sans;
-    @apply w-screen lg:h-screen h-[105vh] bg-[url('/Media/Background.gif')] bg-cover lg:overflow-hidden text-white
+    @apply w-screen lg:h-screen h-[109vh] bg-[url('/Media/Background.gif')] bg-cover lg:overflow-hidden text-white
 }
 
 .pageInput{
@@ -17,7 +17,7 @@
 
 .info-box{
     box-shadow: 0 3px 6px black;
-    @apply flex flex-col lg:w-[27%] h-[85vh] justify-between  rounded-lg px-[2.5rem] py-[2rem] lg:mb-[] mb-[1.8rem]
+    @apply flex flex-col lg:w-[27%] lg:h-[max-content] h-[85vh] justify-between  rounded-lg px-[2.5rem] py-[2rem] lg:mb-[] mb-[1.8rem]
 }
 
 .desc{
@@ -49,12 +49,12 @@ main{
 }
 
 .statBoxes{
-    @apply w-[67vw] h-[auto] lg:flex lg:flex-wrap my-[1rem] lg:gap-7 
+    @apply lg:w-[67vw] w-[90vw] h-[auto] lg:flex lg:flex-wrap my-[1rem] lg:gap-7 
 }
 
 .statBox{
     box-shadow: 0 3px 6px black;
-    @apply lg:w-[11vw] w-[90vw] lg:h-[23vh] border border-black rounded-2xl text-center py-[0.4rem] flex lg:flex-col justify-between lg:mb-[] mb-[0.3rem] lg:px-[] px-[0.5rem]
+    @apply lg:w-[11vw] w-[90vw] lg:h-[23vh] border border-black rounded-2xl text-center py-[0.4rem] flex lg:flex-col justify-between lg:mb-[] mb-[0.3rem] lg:px-[] px-[0.5rem] lg:bg-[transparent] bg-[#33338d]
 }
 
 .statBox h1{
