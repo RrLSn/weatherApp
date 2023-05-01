@@ -98,30 +98,30 @@ const Graph = (props) => {
         
     }
     const options  = {
+        responsive: true,
+        spanGaps: 10,
+        maintainAspectRatio: false,
         plaugin: {
             legend: false
         },
         scales: {
             x: {
                 grid: {
-                    display: true
+                    display: true,
+                    tickWidth: 1
                 }
             }, 
             y: {
-            min: 2,
-            max: 10,
-            ticks: {
-                stepSize: 2,
-                callback: (value) => value + '°C'
-            },
-            grid: {}
+                ticks: {
+                    callback: (value) => value + '°C'
+                }
             }
         }
     }
 
   return (
-    <div className='lg:w-[100%] w-[100%] lg:h-[30vh] h-[45vh] lg:mt-[-7rem] flex justify-center py-[1rem]'>
-        <div className='lg:w-[35rem] w-[25rem] h-[100%] bg-[#b7b9c7] rounded-lg flex justify-center'>
+    <div className='lg:w-[100%] w-[100%] lg:h-[30vh] h-[45vh] lg:mt-[-4rem] flex justify-center lg:py-[0] py-[1rem]'>
+        <div className='lg:w-[35rem] w-[25rem] h-[100%] bg-[#b7b9c7] rounded-lg flex justify-center px-[1rem]'>
         <Line data={data} options={options}></Line>
         </div>
     </div>
