@@ -4,7 +4,7 @@
 
 .app{
     font-style: open sans;
-    @apply w-screen lg:h-screen h-[109vh] bg-[url('/Media/Background.gif')] bg-cover lg:overflow-hidden text-white
+    @apply w-screen lg:h-screen h-[109vh] bg-[url('/Media/Background.gif')] bg-cover lg:overflow-hidden text-white overflow-x-hidden
 }
 
 .pageInput{
