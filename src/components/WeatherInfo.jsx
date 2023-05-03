@@ -12,7 +12,7 @@ const WeatherInfo = (props) => {
         <div className='h-[10.5rem] flex flex-col justify-between'>
         <p className='desc'>{props.desc1}</p>
         <p className='desc'>{props.desc2}</p>
-        <p  className='desc lg:text-6xl text-4xl'>{props.temp}°C</p>
+        <p  className='desc lg:text-6xl text-4xl'>{props.temp}°F</p>
         </div>
 
         <div className='h-[auto]'>
@@ -30,7 +30,7 @@ const WeatherInfo = (props) => {
              </div>
              <div>
                 <img src="/Media/temp.png" />
-                <p>{props.temp}<span>°C</span></p>
+                <p>{props.temp}<span>°F</span></p>
                 <h2>Temperature</h2>
              </div>
              <div>

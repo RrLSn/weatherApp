@@ -113,7 +113,7 @@ const Graph = (props) => {
             }, 
             y: {
                 ticks: {
-                    callback: (value) => value + '°C'
+                    callback: (value) => value + '°F'
                 }
             }
         }
