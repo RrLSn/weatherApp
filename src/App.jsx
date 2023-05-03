@@ -29,7 +29,7 @@ function App() {
         setErrMessage('')
        })
         .catch((err) => {
-          setErrMessage(`Request for ${city} failed, Check connection and Enter a Valid City`)
+          setErrMessage(`Request failed, Check connection and Enter a Valid City`)
           setCity('')
         })
       }
