@@ -18,14 +18,14 @@ const Weather = (props) => {
         list,errMessage} = props
 
   return (
-        <div className='container'>
+        <div className='w-full lg:h-full h-[max-content] lg:p-8 px-8 flex flex-col gap-4'>
             <Nav 
             city={city}
             setCity={setCity}
             fetchData={fetchData}
             errMessage={errMessage}
             />
-            <main>
+            <div className='w-full lg:h-full h-[max-content] lg:flex xl:gap-10 py-4 '>
                 <WeatherInfo 
                 state={state}
                 country={country}
@@ -36,7 +36,7 @@ const Weather = (props) => {
                 wind={wind}
                 pressure={pressure}
                 />
-                <div className='w-screen h-auto lg:bg-transparent bg-[#6464ab]'>
+                <div className='lg:w-screen w-full h-[max-content] flex flex-col gap-10 lg:mt-0 mt-5'>
                     <WeatherStat 
                     list={list}
                     />
@@ -44,8 +44,7 @@ const Weather = (props) => {
                     list={list}
                     />
                 </div>
-            </main>
-            
+            </div>
         </div>
   )
 }

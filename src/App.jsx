@@ -12,14 +12,16 @@ function App() {
   const [weather, setWeather] = useState('')
   const [wind, setWind] = useState('')
   const [errMessage, setErrMessage] = useState('')
-  const apiKey = '5e6ae37d5af6e2a1fd438457d55671a8'
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
+  const env = import.meta.env
+
+    const apiKey = env.VITE_WEATHER_API_KEY
+    const baseUrl = env.VITE_WEATHER_BASE_URL
+    const url = `${baseUrl}?q=${city}&appid=${apiKey}&units=imperial`
 
     const fetchData = async(e) => {
         e.preventDefault()
-       axios
-       .get(url)
-       .then((res) => {
+      try {
+        const res = await axios.get(url)
         setResult(res.data.city)
         setList(res.data.list)
         setMain(res.data.list[0].main)
@@ -27,19 +29,16 @@ function App() {
         setWind(res.data.list[0].wind)
         setCity('')
         setErrMessage('')
-       })
-        .catch((err) => {
-          setErrMessage(`Request failed, Check connection and Enter a Valid City`)
-          setCity('')
-        })
+      } catch (err) {
+        setErrMessage(`Request failed, Check connection and Enter a Valid City`)
+        setCity('')
+      }
       }
 
       useEffect(()=>{fetchData()},[])
   
   return (
-    <div>
-      <div className='app'>
-      
+    <div className='app'>
       {result?
       <Weather
       setCity={setCity}
@@ -62,7 +61,6 @@ function App() {
       fetchData={fetchData}
       errMessage={errMessage}
       />}
-    </div>
     </div>
   )
 }

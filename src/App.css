@@ -1,62 +1,50 @@
-*{
-    @apply m-0 p-0 box-border
+* {
+  @apply m-0 p-0 box-border;
 }
 
-.app{
-    font-style: open sans;
-    @apply w-screen lg:h-screen h-[109vh] bg-[url('/Media/Background.gif')] bg-cover lg:overflow-hidden text-white overflow-x-hidden
+.app {
+  font-style: open sans;
+  @apply w-screen h-[100vh] bg-[url('/Media/Background.gif')] bg-cover text-white overflow-x-hidden;
 }
 
-.pageInput{
-    @apply lg:w-[25rem] lg:p-[0.7rem] px-[0.5rem] w-[13rem] p-[0.2rem] rounded-full m-auto focus:outline-none placeholder:p-[0.5rem] mb-[0.5rem]
+.pageInput {
+  @apply lg:w-[25rem] lg:p-[0.7rem] px-[0.5rem] w-[13rem] p-[0.2rem] rounded-full m-auto focus:outline-none placeholder:p-[0.5rem] mb-[0.5rem];
 }
 
-.container{
-    @apply w-[65vw] h-[auto] lg:px-[2rem] 
+.info-box {
+  box-shadow: 0 3px 6px black;
+  @apply xl:w-[27%] lg:w-[35%] h-[max-content] flex flex-col gap-8 rounded-lg p-[2rem] bg-[#33338d]/40;
 }
 
-.info-box{
-    box-shadow: 0 3px 6px black;
-    @apply flex flex-col lg:w-[27%] lg:h-[max-content] h-[85vh] justify-between  rounded-lg px-[2.5rem] py-[2rem] lg:mb-[0] mb-[1.8rem]
+.desc {
+  @apply text-center lg:text-3xl text-2xl;
 }
 
-.desc{
-    @apply text-center lg:text-3xl text-2xl
+.weatherInput {
+  @apply lg:w-[20rem] w-[10rem] lg:p-[0.5rem] px-[0.5rem] rounded-full focus:outline-none placeholder:p-[0.3rem] lg:placeholder:text-[1rem] placeholder:text-[0.8rem] text-black;
 }
 
-.weatherInput{
-    @apply lg:w-[20rem] w-[10rem] lg:p-[0.5rem] px-[0.5rem] rounded-full focus:outline-none placeholder:p-[0.3rem] lg:placeholder:text-[1rem] placeholder:text-[0.8rem] 
+.weatherInfo {
+  @apply lg:w-[22.5rem] md:w-full lg:py-[0] py-[0.5rem] flex lg:flex-wrap text-center lg:px-[3.5rem] px-[0.5rem] justify-between lg:gap-8 lg:bg-transparent bg-[#a79c9c86] rounded-lg;
 }
 
-.weatherInfo{
-    @apply lg:w-[22.5rem] lg:py-[0] py-[0.5rem] flex lg:flex-wrap text-center lg:px-[3.5rem] px-[0.5rem] justify-between lg:gap-8 lg:bg-transparent bg-[#a79c9c86] rounded-lg
+.weatherInfo img {
+  @apply lg:w-[2.5rem] md:w-[1.5rem] w-6 m-auto;
 }
 
-.weatherInfo img{
-    @apply lg:w-[2.5rem] w-[1.5rem] m-auto
+.weatherInfo div p {
+  @apply md:text-[1rem] text-[13px];
 }
 
-.weatherInfo div p{
-    @apply text-[1rem]
+.weatherInfo div h2 {
+  @apply md:text-[1rem] text-[13px];
 }
 
-.weatherInfo div p span {
-    @apply text-[1rem]
+.statBoxes {
+  @apply w-full h-[auto] lg:flex lg:flex-wrap justify-center items-center lg:gap-7 gap-3;
 }
 
-main{
-    @apply lg:flex lg:gap-10
-}
-
-.statBoxes{
-    @apply lg:w-[67vw] w-[90vw] h-[auto] lg:flex lg:flex-wrap my-[1rem] lg:gap-7 
-}
-
-.statBox{
-    box-shadow: 0 3px 6px black;
-    @apply lg:w-[11vw] w-[90vw] lg:h-[23vh] border border-black rounded-2xl text-center py-[0.4rem] flex lg:flex-col justify-between lg:mb-[0] mb-[0.3rem] lg:px-[0] px-[0.5rem] lg:bg-[transparent] bg-[#33338d]
-}
-
-.statBox h1{
-  @apply text-[1.2rem]
+.statBox {
+  box-shadow: 0 3px 6px black;
+  @apply lg:w-[17vw] w-full lg:h-[max-content] md:h-[20vh] border-2 border-black rounded-2xl text-center flex md:justify-between  items-center lg:flex-col py-4 lg:bg-[#33338d]/40 bg-[#33338d] px-3  lg:mb-0 mb-4 gap-3;
 }

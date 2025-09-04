@@ -1,86 +1,31 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
+// Add this at the top of your Graph.jsx or wherever you use Chart.js
 import {
-    Colors,
-    LineController,
-    CategoryScale,
-    LinearScale,
-    LineElement,
-    PointElement,
-    Legend
-  } from 'chart.js'
-  
-  Chart.register(
-    Colors,
-    LineController,
-    LineElement,
-    PointElement,
-    CategoryScale,
-    LinearScale,
-    Legend
-  );
+  Chart,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
 
-const Graph = (props) => {
-    const {list} = props
+Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-    let today = new Date();
-    let DaysOfWeekArr = []
+const Graph = ({list}) => {
+    const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat']
 
-    for (let i = 0; i < 7; i++) {
-    let nextDay = new Date(today);
-    nextDay.setDate(today.getDate() + i);
-    let dayOfWeek = nextDay.getDay();
-    
-    switch (dayOfWeek) {
-        case 0:
-        DaysOfWeekArr.push("Sun");
-        break;
-        case 1:
-        DaysOfWeekArr.push("Mon");
-        break;
-        case 2:
-        DaysOfWeekArr.push("Tues");
-        break;
-        case 3:
-        DaysOfWeekArr.push("Wed");
-        break;
-        case 4:
-        DaysOfWeekArr.push("Thurs");
-        break;
-        case 5:
-        DaysOfWeekArr.push("Fri");
-        break;
-        case 6:
-        DaysOfWeekArr.push("Sat");
-        break;
-    }}
-
-    const labels = [
-        DaysOfWeekArr[0],
-        DaysOfWeekArr[1],
-        DaysOfWeekArr[2],
-        DaysOfWeekArr[3],
-        DaysOfWeekArr[4],
-        DaysOfWeekArr[5],
-        DaysOfWeekArr[6],
-        DaysOfWeekArr[7]
-    ]
+    const today = new Date().getDay();
+    const labels = Array.from({ length: 7 }, (_, i) => days[(today + i) % 7]);
+    const temps = list.slice(0, 7).map(item => item.main.temp);
 
     const data = {
         labels: labels,
         datasets: [{
             label: '7-Days Weather Statistic',
-            data: 
-            [
-                list[0].main.temp,
-                list[1].main.temp,
-                list[2].main.temp,
-                list[3].main.temp,
-                list[4].main.temp,
-                list[5].main.temp,
-                list[6].main.temp
-            ],
+            data: temps,
             fill: {
                 target: 'origin',
                 above: '#9498b6',
@@ -92,7 +37,7 @@ const Graph = (props) => {
         pointBackgroundColor: 'transparent',
         pointBorderWidth: 1,
         pointStyle: 'rectRounded',
-        pointRadius: '8',
+        pointRadius: 8,
         tension: 0.5
         }],
         
@@ -102,7 +47,7 @@ const Graph = (props) => {
         spanGaps: 10,
         maintainAspectRatio: false,
         plaugin: {
-            legend: false
+            legend: {display: false}
         },
         scales: {
             x: {
@@ -120,8 +65,8 @@ const Graph = (props) => {
     }
 
   return (
-    <div className='lg:w-[100%] w-[100%] lg:h-[30vh] h-[45vh] lg:mt-[-4rem] flex justify-center lg:py-[0] py-[1rem]'>
-        <div className='lg:w-[35rem] w-[25rem] h-[100%] bg-[#b7b9c7] rounded-lg flex justify-center px-[1rem]'>
+    <div className='w-full lg:h-[30vh] h-[45vh] flex justify-center'>
+        <div className='md:w-[50%] w-[15rem] h-[100%] bg-[#b7b9c7] rounded-lg flex justify-center items-center p-4'>
         <Line data={data} options={options}></Line>
         </div>
     </div>
